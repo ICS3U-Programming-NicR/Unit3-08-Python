@@ -19,13 +19,13 @@ def main():
     if day < 0 or month < 0 or year < 0:
         print("You have to input integers greater than 0")
         main()
-    doomsday = [ 0, 3, 2, 5, 0, 3,
-          5, 1, 4, 6, 2, 4 ]
+    doomsday = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
     year -= month < 3
-    day_week = (( year + (year // 4) - (year // 100)
-             + (year // 400) + doomsday[month - 1] + day) % 7)
-    if year % 4 == 0 :
-        if (year % 100  == 0) and (year % 400 != 0):
+    day_week = (
+        year + (year // 4) - (year // 100) + (year // 400) + doomsday[month - 1] + day
+    ) % 7
+    if year % 4 == 0:
+        if (year % 100 == 0) and (year % 400 != 0):
             print("This year is not a leap year")
         else:
             print("This year is a leap year")
